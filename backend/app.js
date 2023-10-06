@@ -14,7 +14,11 @@ const {
 } = require('./errors/index');
 
 const { PORT = 3000 } = process.env;
-const allowedOrigins = 'http://localhost:3001';
+const allowedOrigins = [
+  'https://pavel.student.nomoredomainsrocks.ru',
+  'https://api.pavel.student.nomoredomainsrocks.ru',
+  'localhost:3000'
+]
 const corsOptions = {
   origin: allowedOrigins, // allowedOrigins,
   credentials: true, // Разрешить передачу учетных данных (куки)
@@ -32,6 +36,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(requestLogger);
 app.use(express.json());
+app.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
 app.post('/signin', validation.signUser, login);
 app.post('/signup', validation.login, createUser);
 app.use('/users', auth, require('./routes/users'));
@@ -45,4 +53,5 @@ app.use(errors());
 app.use(centralError);
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}`);
+});
 });
