@@ -1,0 +1,8 @@
+.card__title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+  /* height: 23px; */
+  margin: 22px auto 0px auto;
+  position: relative;
+}

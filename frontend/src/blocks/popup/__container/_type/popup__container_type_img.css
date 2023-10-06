@@ -1,0 +1,16 @@
+.popup__container_type_img {
+  display: inline-block;
+  width: auto;
+  border-radius: 0;
+  max-width: 75vw;
+  max-height: 75vh;
+  transition: 0.5s all;
+  background: none;
+  padding: 0;
+}
+@media screen and (max-width: 700px) {
+  .popup__container_type_img {
+    width: auto;
+    padding: 0;
+  }
+}

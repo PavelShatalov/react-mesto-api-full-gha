@@ -1,0 +1,4 @@
+.card__info {
+  margin: 0 20px 0 auto;
+  flex-shrink: 0;
+}

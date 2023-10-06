@@ -1,0 +1,16 @@
+.card__button-trash {
+background: transparent url(../../../images/Trash-Button.svg);
+border: 0px;
+width: 18px;
+height: 19px;
+/* z-index: 2; */
+position: absolute;
+margin-top: 20px;
+margin-left: 244px;
+margin-right: 20px;
+
+}
+.card__button-trash:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
