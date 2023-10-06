@@ -9,8 +9,8 @@
 
 ## Ссылки на проект
 
-IP-адрес x.x.x.x
+IP-адрес 51.250.91.63
 
-Frontend https://...
+Frontend https://pavel.student.nomoredomainsrocks.ru
 
-Backend https://...
+Backend https://api.pavel.student.nomoredomainsrocks.ru
