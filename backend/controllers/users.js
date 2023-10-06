@@ -50,10 +50,6 @@ module.exports.getUserAct = (req, res, next) => {
       return res.json(user);
     })
     .catch((err) => {
-      if (err.name === 'CastError') {
-        next(new BadRequestError('Некорректный ID пользователя.'));
-        return;
-      }
       next(err);
     });
 };// возвращает информацию о текущем пользователе
