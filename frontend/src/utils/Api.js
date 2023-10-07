@@ -1,5 +1,5 @@
-// const baseUrl = 'https://api.pavel.student.nomoredomainsrocks.ru';
-const baseUrl = 'http://localhost:3000'
+const baseUrl = 'https://api.pavel.student.nomoredomainsrocks.ru';
+// const baseUrl = 'http://localhost:3000'
 class Api {
 
   constructor({baseUrl, headers}) {
