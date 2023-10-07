@@ -1,9 +1,10 @@
-const baseUrl = 'https://api.pavel.student.nomoredomainsrocks.ru'
+// const baseUrl = 'https://api.pavel.student.nomoredomainsrocks.ru';
+const baseUrl = 'http://localhost:3000'
 class Api {
 
   constructor({baseUrl, headers}) {
     this._baseUrl = baseUrl;
-    this._headers = headers;
+    // this._headers = headers;
   }
 
   getUserInfo() {
@@ -29,7 +30,7 @@ class Api {
     const url = `${this._baseUrl}/cards`;
 
     return fetch(url,{
-      headers: this._headers,
+      // headers: this._headers,
       credentials: 'include',// Включите передачу кук с запросом
     })
     .then(res => this._getResponseData(res));
@@ -72,7 +73,7 @@ class Api {
 
     return fetch(url, {
       method: 'PATCH',
-      headers: this._headers,
+      // headers: this._headers,
       credentials: 'include',
       body: JSON.stringify({
         name: name,
@@ -94,7 +95,7 @@ class Api {
     const url = `${this._baseUrl}/cards`;
     return fetch(url, {
       method: 'POST',
-      headers: this._headers,
+      // headers: this._headers,
       credentials: 'include',
       body: JSON.stringify({
         name,
@@ -126,7 +127,7 @@ class Api {
     const url = `${this._baseUrl}/cards/${cardId}/likes`;
     return fetch(url, {
       method: 'PUT',
-      headers: this._headers,
+      // headers: this._headers,
       credentials: 'include',
     })
     .then(res => this._getResponseData(res));
@@ -136,7 +137,7 @@ class Api {
     const url = `${this._baseUrl}/cards/${cardId}/likes`;
     return fetch(url, {
       method: 'DELETE',
-      headers: this._headers,
+      // headers: this._headers,
       credentials: 'include',
     })
     .then(res => this._getResponseData(res))
@@ -147,7 +148,7 @@ class Api {
     const url = `${this._baseUrl}/users/me/avatar`;
     return fetch(url, {
       method: 'PATCH',
-      headers: this._headers,
+      // headers: this._headers,
       credentials: 'include',
       body: JSON.stringify({
         avatar: link
@@ -167,8 +168,8 @@ class Api {
 
 export const api = new Api({
   baseUrl: baseUrl,
-  headers: {
-    // authorization: '789a651d-0180-4c70-97c5-9aa0e481c31b',
-    'Content-Type': 'application/json'
-  }
+  // headers: {
+  //   // authorization: '789a651d-0180-4c70-97c5-9aa0e481c31b',
+  //   'Content-Type': 'application/json'
+  // }
 });

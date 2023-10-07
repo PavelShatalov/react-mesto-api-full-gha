@@ -1,4 +1,6 @@
-export const BASE_URL = 'https://api.pavel.student.nomoredomainsrocks.ru';
+// export const BASE_URL = 'https://api.pavel.student.nomoredomainsrocks.ru';
+export const BASE_URL = 'http://localhost:3000';
+
 
 
 
@@ -7,10 +9,10 @@ export const registrace = (password,email) => {
   return fetch(`${BASE_URL}/signup`, {
     method: "POST",
     credentials: 'include',
-    headers: {
-      // Accept: "application/json",
-      "Content-Type": "application/json"
-    },
+    // headers: {
+    //   // Accept: "application/json",
+    //   "Content-Type": "application/json"
+    // },
     body: JSON.stringify({  email:email, password: password })
   }).then(getResponseData)
   // console.log(JSON.stringify({ email, password }))
@@ -26,9 +28,9 @@ export const registrace = (password,email) => {
   export const authorizace = (password, email) => {
     return fetch(`${BASE_URL}/signin`, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json" 
-      },
+      // headers: {
+      //   "Content-Type": "application/json" 
+      // },
       credentials: 'include',
       body: JSON.stringify({  email:email, password: password })
     }).then(getResponseData)}
