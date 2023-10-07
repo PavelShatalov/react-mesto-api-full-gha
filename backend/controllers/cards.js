@@ -63,6 +63,7 @@ module.exports.likeCard = (req, res, next) => {
   Card.findByIdAndUpdate(
     cardId,
     { $addToSet: { likes: userId } }, // добавить userId в массив, если его там нет
+    { new: true },
   )
     .then((card) => {
       if (!card) {
@@ -87,6 +88,7 @@ module.exports.dislikeCard = (req, res, next) => {
   Card.findByIdAndUpdate(
     cardId,
     { $pull: { likes: userId } }, // убрать userId из массива
+    { new: true },
   )
     .then((card) => {
       if (!card) {

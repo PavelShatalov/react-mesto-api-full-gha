@@ -4,8 +4,15 @@ class Api {
 
   constructor({baseUrl, headers}) {
     this._baseUrl = baseUrl;
-    // this._headers = headers;
+   
   }
+  _getDefaultHeaders() {
+    return {
+      authorization: `Bearer ${localStorage.jwt}`,
+      'Content-Type': 'application/json',
+    };
+  }
+
 
   getUserInfo() {
     const url = `${this._baseUrl}/users/me`;
@@ -30,7 +37,7 @@ class Api {
     const url = `${this._baseUrl}/cards`;
 
     return fetch(url,{
-      // headers: this._headers,
+      headers: this._getDefaultHeaders(),
       credentials: 'include',// Включите передачу кук с запросом
     })
     .then(res => this._getResponseData(res));
@@ -73,7 +80,7 @@ class Api {
 
     return fetch(url, {
       method: 'PATCH',
-      // headers: this._headers,
+      headers: this._getDefaultHeaders(),
       credentials: 'include',
       body: JSON.stringify({
         name: name,
@@ -95,7 +102,7 @@ class Api {
     const url = `${this._baseUrl}/cards`;
     return fetch(url, {
       method: 'POST',
-      // headers: this._headers,
+      headers: this._getDefaultHeaders(),
       credentials: 'include',
       body: JSON.stringify({
         name,
@@ -110,7 +117,7 @@ class Api {
     return fetch(url, {
       method: 'DELETE',
       credentials: 'include',
-      // headers: this._headers
+      headers: this._getDefaultHeaders(),
     })
     .then(res => this._getResponseData(res));
   }
@@ -127,7 +134,7 @@ class Api {
     const url = `${this._baseUrl}/cards/${cardId}/likes`;
     return fetch(url, {
       method: 'PUT',
-      // headers: this._headers,
+      headers: this._getDefaultHeaders(),
       credentials: 'include',
     })
     .then(res => this._getResponseData(res));
@@ -137,7 +144,7 @@ class Api {
     const url = `${this._baseUrl}/cards/${cardId}/likes`;
     return fetch(url, {
       method: 'DELETE',
-      // headers: this._headers,
+      headers: this._getDefaultHeaders(),
       credentials: 'include',
     })
     .then(res => this._getResponseData(res))
@@ -148,7 +155,7 @@ class Api {
     const url = `${this._baseUrl}/users/me/avatar`;
     return fetch(url, {
       method: 'PATCH',
-      // headers: this._headers,
+      headers: this._getDefaultHeaders(),
       credentials: 'include',
       body: JSON.stringify({
         avatar: link
@@ -168,8 +175,8 @@ class Api {
 
 export const api = new Api({
   baseUrl: baseUrl,
-  // headers: {
-  //   // authorization: '789a651d-0180-4c70-97c5-9aa0e481c31b',
-  //   'Content-Type': 'application/json'
-  // }
+  headers: {
+    authorization: `Bearer ${localStorage.jwt}}`,
+    'Content-Type': 'application/json'
+  }
 });

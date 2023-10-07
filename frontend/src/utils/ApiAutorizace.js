@@ -9,10 +9,10 @@ export const registrace = (password,email) => {
   return fetch(`${BASE_URL}/signup`, {
     method: "POST",
     credentials: 'include',
-    // headers: {
-    //   // Accept: "application/json",
-    //   "Content-Type": "application/json"
-    // },
+    headers: {
+      authorization: `Bearer ${localStorage.jwt}}`,
+      'Content-Type': 'application/json'
+    },
     body: JSON.stringify({  email:email, password: password })
   }).then(getResponseData)
   // console.log(JSON.stringify({ email, password }))
@@ -28,9 +28,10 @@ export const registrace = (password,email) => {
   export const authorizace = (password, email) => {
     return fetch(`${BASE_URL}/signin`, {
       method: "POST",
-      // headers: {
-      //   "Content-Type": "application/json" 
-      // },
+      headers: {
+        authorization: `Bearer ${localStorage.jwt}}`,
+        'Content-Type': 'application/json'
+      },
       credentials: 'include',
       body: JSON.stringify({  email:email, password: password })
     }).then(getResponseData)}
@@ -42,10 +43,10 @@ export const registrace = (password,email) => {
   export const tokenValidate= () => {
     return fetch(`${BASE_URL}/users/me`, {
       method: "GET",
-      // headers: {
-      //   "Content-Type": "application/json",
-      //   "Authorization": `Bearer ${token}`
-      // },
+      headers: {
+        authorization: `Bearer ${localStorage.jwt}}`,
+        'Content-Type': 'application/json'
+      },
       credentials: 'include',
     }).then(getResponseData)}
 // Answer 
