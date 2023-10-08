@@ -13,4 +13,4 @@ IP-адрес 51.250.91.63
 
 Frontend https://pavel.student.nomoredomainsrocks.ru
 
-Backend https://api.pavel.student.nomoredomainsrocks.ru
+Backend https://api.pavel.students.nomoredomainsrocks.ru
