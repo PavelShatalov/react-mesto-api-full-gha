@@ -5,11 +5,11 @@
   
 Пожалуйста, прикрепите в это описание ссылку на сайт, размещенный на Яндекс.Облаке.
 
-Адрес репозитория: https://github.com/...
+Адрес репозитория: https://github.com/PavelShatalov/react-mesto-api-full-gha/tree/main
 
 ## Ссылки на проект
 
-IP-адрес 51.250.91.63
+IP-адрес 158.160.108.60
 
 Frontend https://pavel.student.nomoredomainsrocks.ru
 
